@@ -165,6 +165,10 @@ export default {
       type: Number,
       default: 200,
     },
+    responsiveBaseElement: {
+        type: String,
+        "default": "window"
+    },
     video: {
       type: Boolean,
       default: false,
@@ -263,6 +267,7 @@ export default {
       callbacks: this.callbacks,
       responsive: this.responsive,
       responsiveRefreshRate: this.responsiveRefreshRate,
+      responsiveBaseElement: this.responsiveBaseElement,
       video: this.video,
       videoHeight: this.videoHeight,
       videoWidth: this.videoWidth,
