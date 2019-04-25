@@ -43,6 +43,7 @@
     "vue-style-loader": "^2.0.3",
     "vue-template-compiler": "^2.2.1",
     "webpack": "1.13.1",
+    "webpack-cli": "^3.3.1",
     "webpack-merge": "^4.1.0"
   },
   "homepage": "https://github.com/s950329/vue-owl-carousel#readme",
