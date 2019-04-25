@@ -217,6 +217,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    rtl: {
+      type: Boolean,
+      default: false
+    }
   },
   data: function() {
     return {
@@ -280,6 +284,7 @@ export default {
       navContainer: this.navContainer,
       dotsContainer: this.dotsContainer,
       checkVisible: this.checkVisible,
+      rtl: this.rtl
     });
 
     $('#' + this.prevHandler).click(function() {
