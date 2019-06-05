@@ -7,18 +7,20 @@
 
 
 
-- The [VueJS](https://vuejs.org/) wrapper for [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/).
-
-
+- [VueJS](https://vuejs.org/) wrapper for [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/).
 
 - [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/) is touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider.
 
 - Extended from [vue-owl-carousel](https://github.com/s950329/vue-owl-carousel)
 
+## This Fork
+
+- Has the autoHeight and autoHeightClass options enabled
+
+- Has an extra prop: goTo, which allows you to update the current slide.
+
 
 ## Installation
-
-
 
 `npm i -s vue-owl-carousel` or `yarn add vue-owl-carousel`
 
@@ -83,6 +85,13 @@ Set events,
 
 //
 
+</carousel>
+```
+
+Dynamically update the current slide
+```
+<carousel :go-to="slideNumber">
+//
 </carousel>
 ```
 
