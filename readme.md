@@ -3,17 +3,13 @@
 
   ---
 
-## Intro
-
-
-
 - [VueJS](https://vuejs.org/) wrapper for [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/).
 
 - [Owl Carousel](https://owlcarousel2.github.io/OwlCarousel2/) is touch enabled jQuery plugin that lets you create a beautiful responsive carousel slider.
 
 - Extended from [vue-owl-carousel](https://github.com/s950329/vue-owl-carousel)
 
-## This Fork
+## What's in this fork?
 
 - Has the autoHeight and autoHeightClass options enabled
 
