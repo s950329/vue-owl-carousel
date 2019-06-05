@@ -29,6 +29,14 @@ export default {
       type: Number,
       default: 0,
     },
+    autoHeight: {
+      type: Boolean,
+      default: false
+    },
+    autoHeightClass: {
+      type: String,
+      default: 'owl-height',
+    },
     loop: {
       type: Boolean,
       default: false,
@@ -280,6 +288,8 @@ export default {
       navContainer: this.navContainer,
       dotsContainer: this.dotsContainer,
       checkVisible: this.checkVisible,
+      autoHeight: this.autoHeight,
+      autoHeightClass: this.autoHeightClass
     });
 
     $('#' + this.prevHandler).click(function() {
