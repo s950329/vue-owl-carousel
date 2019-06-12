@@ -12,8 +12,6 @@
   </div>
 </template>
 <script>
-import 'owl.carousel/dist/assets/owl.carousel.css';
-import 'owl.carousel/dist/assets/owl.theme.default.css';
 import 'owl.carousel';
 
 import events from './utils/events';
@@ -28,6 +26,14 @@ export default {
     margin: {
       type: Number,
       default: 0,
+    },
+    autoHeight: {
+      type: Boolean,
+      default: false
+    },
+    autoHeightClass: {
+      type: String,
+      default: 'owl-height',
     },
     loop: {
       type: Boolean,
@@ -217,6 +223,11 @@ export default {
       type: Boolean,
       default: true,
     },
+    goTo: {
+      type: Number,
+      required: false,
+      default: 0
+    },
   },
   data: function() {
     return {
@@ -226,11 +237,17 @@ export default {
       prevHandler: 'carousel_prev_' + this.generateUniqueId(),
       elementHandle: 'carousel_' + this.generateUniqueId(),
       nextHandler: 'carousel_next_' + this.generateUniqueId(),
+
+      owl: null,
     };
   },
-
+  watch: {
+    goTo(v) {
+      this.owl.trigger('to.owl.carousel', [v, 500]);
+    },
+  },
   mounted: function() {
-    const owl = $('#' + this.elementHandle).owlCarousel({
+    this.owl = $('#' + this.elementHandle).owlCarousel({
       items: this.items,
       margin: this.margin,
       loop: this.loop,
@@ -280,24 +297,26 @@ export default {
       navContainer: this.navContainer,
       dotsContainer: this.dotsContainer,
       checkVisible: this.checkVisible,
+      autoHeight: this.autoHeight,
+      autoHeightClass: this.autoHeightClass
     });
 
-    $('#' + this.prevHandler).click(function() {
-      owl.trigger('prev.owl.carousel');
+    $('#' + this.prevHandler).click(() => {
+      this.owl.trigger('prev.owl.carousel');
     });
 
-    $('#' + this.nextHandler).click(function() {
-      owl.trigger('next.owl.carousel');
+    $('#' + this.nextHandler).click(() => {
+      this.owl.trigger('next.owl.carousel');
     });
 
     events.forEach((eventName) => {
-      owl.on(`${eventName}.owl.carousel`, (event) => {
+      this.owl.on(`${eventName}.owl.carousel`, (event) => {
         this.$emit(eventName, event);
       });
     });
 
     if (!this.loop) {
-      owl.on('changed.owl.carousel', (event) => {
+      this.owl.on('changed.owl.carousel', (event) => {
         // start
         if (event.item.index === 0) {
           this.showPrev = false;
