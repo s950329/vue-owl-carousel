@@ -296,6 +296,11 @@ export default {
       });
     });
 
+    owl.on('mousewheel', '.owl-stage', (event) => {
+      this.$emit('mousewheel', event);
+      e.preventDefault();
+    });
+
     if (!this.loop) {
       owl.on('changed.owl.carousel', (event) => {
         // start
