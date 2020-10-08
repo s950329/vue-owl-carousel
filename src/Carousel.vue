@@ -295,17 +295,19 @@ export default {
       checkVisible: this.checkVisible,
     });
 
+    const vm = this;
+
     $('#' + this.prevHandler).click(function() {
-      this.owl.trigger('prev.owl.carousel');
+      vm.owl.trigger('prev.owl.carousel');
     });
 
     $('#' + this.nextHandler).click(function() {
-      this.owl.trigger('next.owl.carousel');
+      vm.owl.trigger('next.owl.carousel');
     });
 
     events.forEach((eventName) => {
-      this.owl.on(`${eventName}.owl.carousel`, (event) => {
-        this.$emit(eventName, event);
+      vm.owl.on(`${eventName}.owl.carousel`, (event) => {
+        vm.$emit(eventName, event);
       });
     });
 
