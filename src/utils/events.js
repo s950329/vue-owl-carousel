@@ -11,6 +11,5 @@ export default [
   'dragged',
   'translate',
   'translated',
-  'to',
   'changed',
 ];
