@@ -217,6 +217,10 @@ export default {
       type: Boolean,
       default: true,
     },
+    isRtl: {
+      type: Boolean,
+      default: false,
+    }
   },
   data: function() {
     return {
@@ -280,6 +284,7 @@ export default {
       navContainer: this.navContainer,
       dotsContainer: this.dotsContainer,
       checkVisible: this.checkVisible,
+      rtl: this.isRtl,
     });
 
     $('#' + this.prevHandler).click(function() {
