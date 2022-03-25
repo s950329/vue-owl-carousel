@@ -161,7 +161,7 @@
                         "default": !1
                     },
                     autoplaySpeed: {
-                        type: Boolean,
+                        type: [Number, Boolean],
                         "default": !1
                     },
                     autoplayTimeout: {
