@@ -27,10 +27,10 @@
 ```
 <script>
 
-import carousel from 'vue-owl-carousel'
+import Carousel from 'vue-owl-carousel'
 
 export default {
-    components: { carousel },
+    components: { Carousel },
 }
 
 </script>
@@ -39,7 +39,7 @@ export default {
 Basic Usage
 
 ```
-<carousel>
+<Carousel>
 
     <img src="https://placeimg.com/200/200/any?1">
 
@@ -49,13 +49,13 @@ Basic Usage
 
     <img src="https://placeimg.com/200/200/any?4">
 
-</carousel>
+</Carousel>
 ```
 
 Custom prev and next buttons using slot, the buttons will be hidden while start and end in non-loop mode
 
 ```
-<carousel>
+<Carousel>
 
     <template slot="prev"><span class="prev">prev</span></template>
 
@@ -63,27 +63,27 @@ Custom prev and next buttons using slot, the buttons will be hidden while start 
 
     <template slot="next"><span class="next">next</span></template>
 
-</carousel>
+</Carousel>
 ```
 
 Set options,
 
 ```
-<carousel :autoplay="true" :nav="false">
+<Carousel :autoplay="true" :nav="false">
 
 //
 
-</carousel>
+</Carousel>
 ```
 
 Set events,
 
 ```
-<carousel @changed="changed" @updated="updated">
+<Carousel @changed="changed" @updated="updated">
 
 //
 
-</carousel>
+</Carousel>
 ```
 
 ## Available options
