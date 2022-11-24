@@ -126,7 +126,7 @@ export default {
       default: false,
     },
     autoplaySpeed: {
-      type: Boolean,
+      type: [Boolean, Number],
       default: false,
     },
     autoplayTimeout: {
